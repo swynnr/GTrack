@@ -13,13 +13,47 @@ namespace GTrack.Controllers
         // GET: Tarkov
         public ActionResult Index()
         {
-            List<TarkovStats> model =  TarkovStatContext.GetTarkovStats();
+            List<TarkovStats> model =  TarkovRepository.GetTarkovStats();
                 return View(model);
         }
 
+
+
+        public ActionResult NewStat()
+        {
+            return View("Button");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         public ActionResult Increment(int id)
         {
-            TarkovStatContext.IncrementCounter(id);
+            TarkovRepository.IncrementCounter(id);
                 return RedirectToAction(nameof(Index));
         }
 
