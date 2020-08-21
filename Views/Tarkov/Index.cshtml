@@ -1,0 +1,41 @@
+﻿@model List<GTrack.Models.TarkovStats>
+
+@{
+    ViewData["Title"] = "Tarkov Stats";
+}
+<h1>TarkovStatsView</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Kill</th>
+            <th>Death</th>
+            <th>Counter</th>
+            <th>Id</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @item.kill)
+            </td>
+            <td>
+                @item.death)
+            </td>
+            <td>
+                @item.count)
+            </td>
+            <td>
+                @item.id)
+            </td>
+            
+            <td>
+                <a asp-controller="Tarkov"
+                   asp-action="Increment"
+                   asp-route-id="@item.id">+</a>
+            </td>
+        </tr>
+        }
+</tbody>
+</table>

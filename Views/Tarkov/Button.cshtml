@@ -1,0 +1,48 @@
+﻿@model GTrack.Models.TarkovStats
+
+@{
+    ViewData["Title"] = "Button";
+}
+
+<h1>Button</h1>
+
+<h4>TarkovStats</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Button">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="kill" class="control-label"></label>
+                <input asp-for="kill" class="form-control" />
+                <span asp-validation-for="kill" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="death" class="control-label"></label>
+                <input asp-for="death" class="form-control" />
+                <span asp-validation-for="death" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="count" class="control-label"></label>
+                <input asp-for="count" class="form-control" />
+                <span asp-validation-for="count" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="id" class="control-label"></label>
+                <input asp-for="id" class="form-control" />
+                <span asp-validation-for="id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
